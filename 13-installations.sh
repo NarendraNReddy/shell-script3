@@ -9,4 +9,9 @@ then
 else 
     echo "Super User"
 fi 
-        
+
+
+for i in $@:
+do 
+    echo $i
+done 
