@@ -5,6 +5,13 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log 
 echo $LOGFILE
 
+
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+BL="\e[34m"
+N="\e[0m"
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
@@ -21,6 +28,8 @@ do
     dnf list installed $i
     if [ $? -eq 0 ];
     then 
-        echo "$i already installed...SKIPPING"
+        echo -e "$i already installed...$Y SKIPPING $N"
+    else 
+        dnf install $i -y &>>$LOGFILE    
     fi
 done 
