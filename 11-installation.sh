@@ -4,8 +4,6 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 
-
-
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
