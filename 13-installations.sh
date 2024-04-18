@@ -1,5 +1,8 @@
 #!/bin/bash
 
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+echo $SCRIPT_NAME
+
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
@@ -13,5 +16,9 @@ fi
 
 for i in $@;
 do 
-    echo $i
+    dnf list installed $i
+    if [ $? -eq 0 ];
+    then 
+        echo "$i already installed...SKIPPING"
+    fi
 done 
