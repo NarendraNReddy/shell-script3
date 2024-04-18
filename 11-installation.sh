@@ -4,6 +4,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 echo $LOGFILE
 R="\e[31"
+G="\e[32
 
 
 USERID=$(id -u)
@@ -20,9 +21,9 @@ VALIDATE()
 {
     if [ $1 -ne 0 ];
     then 
-        echo -e "$2 is ... $R FAILURE"
+        echo "$2 is ...  FAILURE"
     else 
-        echo "$2 is .... SUCCESS"    
+        echo -e "$2 is .... $R SUCCESS"    
     fi    
 }
 
