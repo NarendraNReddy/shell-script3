@@ -5,6 +5,7 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ];
 then 
     echo "Please run this command through super user"
+    exit 1
 else 
     echo "Super User"
 fi 
@@ -17,6 +18,7 @@ VALIDATE()
         echo "$2 is ... FAILURE"
     else 
         echo "$2 is .... SUCCESS"    
+    fi    
 }
 
 
