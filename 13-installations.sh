@@ -25,7 +25,7 @@ fi
 
 for i in $@;
 do 
-    dnf list installed $i
+    dnf list installed $i &>>$LOGFILE
     if [ $? -eq 0 ];
     then 
         echo -e "$i already installed...$Y SKIPPING $N"
