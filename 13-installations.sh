@@ -11,7 +11,7 @@ else
 fi 
 
 
-for i in $@:
+for i in $@;
 do 
     echo $i
 done 
