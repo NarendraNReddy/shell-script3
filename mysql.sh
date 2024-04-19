@@ -1,6 +1,7 @@
 #!/bin/bash
 TIMESTAMP=$(date +%F-%H-%M-%S)
-echo $TIMESTAMP
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+echo $SCRIPT_NAME
 
 USERID=$(id -u)
 
