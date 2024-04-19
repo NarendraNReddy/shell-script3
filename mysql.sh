@@ -38,5 +38,5 @@ VALIDATE $? "enable mysqld server:  "
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "start mysqld server:  "
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+mysql_secure_installation --set-root-pass ExpenseApp@12 &>>$LOGFILE
 VALIDATE $? "Set DB username and password: "
